@@ -1,5 +1,7 @@
 extends Actor
 
+export var stomp_impulse: = 1000.0
+
 func _physics_process(delta):
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()
@@ -25,3 +27,11 @@ func calculate_move_velocity(linear_velocity: Vector2, direction: Vector2, speed
 		out.y = 0.0
 	
 	return out
+
+func calculate_stomp_velocity(linear_velocity: Vector2, impulse:float) -> Vector2:
+	var out: = linear_velocity
+	out.y = -impulse
+	return out
+
+func _on_EnemyDetector_area_entered(area:Area2D):
+	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
