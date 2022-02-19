@@ -33,5 +33,8 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse:float) -> Vector
 	out.y = -impulse
 	return out
 
-func _on_EnemyDetector_area_entered(area:Area2D):
+func _on_EnemyDetector_area_entered(area: Area2D):
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
+
+func _on_EnemyDetector_body_entered(body: Node):
+	queue_free()
