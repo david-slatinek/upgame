@@ -10,8 +10,10 @@ extents = Vector2( 46, 45.5 )
 extents = Vector2( 48, 48 )
 
 [node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.8, 0.8 )
 collision_mask = 8
 script = ExtResource( 2 )
+speed = Vector2( 500, 1200 )
 gravity = 500.0
 
 [node name="player" type="Sprite" parent="."]
@@ -23,7 +25,7 @@ position = Vector2( 0, -45.5 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -193 )
+position = Vector2( 0, -120 )
 current = true
 
 [node name="EnemyDetector" type="Area2D" parent="."]
