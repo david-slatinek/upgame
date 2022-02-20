@@ -35,6 +35,8 @@ drag_margin_v_enabled = true
 smoothing_enabled = true
 drag_margin_left = 0.0
 drag_margin_right = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="EnemyDetector" type="Area2D" parent="."]
 collision_layer = 0
@@ -44,7 +46,6 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
 modulate = Color( 0.207479, 0.0227051, 0.96875, 1 )
 position = Vector2( 0.375002, -46.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]
