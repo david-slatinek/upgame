@@ -1,13 +1,17 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/font_title.tres" type="DynamicFont" id=1]
 
 [node name="Title" type="Label"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -25.5
-margin_top = 191.0
-margin_right = 25.5
-margin_bottom = 205.0
+margin_left = -101.5
+margin_top = 177.0
+margin_right = 101.5
+margin_bottom = 234.0
+custom_fonts/font = ExtResource( 1 )
 text = "upgame"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
