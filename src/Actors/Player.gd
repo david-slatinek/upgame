@@ -37,4 +37,8 @@ func _on_EnemyDetector_area_entered(_area: Area2D):
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(_body: Node):
+	die()
+
+func die():
+	PlayerData.deaths += 1
 	queue_free()
