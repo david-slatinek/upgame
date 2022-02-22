@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UI/UserInterface.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -39,10 +40,15 @@ __meta__ = {
 "_edit_vertical_guides_": [ 4882.0 ]
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 8 )]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
+[node name="Background" type="TextureRect" parent="BackgroundLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1920.0
@@ -70,47 +76,51 @@ gravity = 4000.0
 limit_right = 4880
 limit_bottom = 770
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 812, 558 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1730, 560 )
-
-[node name="Enemy4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3699, 553 )
-
-[node name="Coin" parent="." instance=ExtResource( 5 )]
-position = Vector2( 525, 428 )
-
-[node name="Coin2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1118, 266 )
-
-[node name="Coin3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1360, 100 )
-
-[node name="Coin4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1460, 100 )
-
-[node name="Coin5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1560, 100 )
-
-[node name="Coin6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1901, 457 )
-
-[node name="Coin7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2443, 100 )
-
-[node name="Coin8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3225, 187 )
-
-[node name="Coin9" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3336, 116 )
-
-[node name="Coin10" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3469, 83 )
-
 [node name="Portal2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 4558, 311 )
 next_scene = ExtResource( 7 )
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 525, 428 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 1118, 266 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 1360, 100 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 1460, 100 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 1560, 100 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 1901, 457 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 2443, 100 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 3225, 187 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 3336, 116 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 3469, 83 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 812, 558 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 1730, 560 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 3699, 553 )
 
 [editable path="Player"]
