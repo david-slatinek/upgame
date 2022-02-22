@@ -9,6 +9,7 @@ func _get_configuration_warning():
 	return "The next scene property can't be empty" if not next_scene else ""
 
 func teleport():
+	PlayerData.last_score = PlayerData.score
 	anim_player.play("fade_in")
 	yield(anim_player, "animation_finished")
 	get_tree().change_scene_to(next_scene)
