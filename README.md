@@ -4,7 +4,7 @@
 </div>
 
 <div align="center">
-  <img alt="Logo" src="images/logo.png">
+  <img alt="Logo" src="other/game.gif">
 </div>
 
 
