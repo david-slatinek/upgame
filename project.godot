@@ -21,16 +21,15 @@ _global_script_class_icons={
 [application]
 
 config/name="upgame"
+config/description="Pick up coins, defeat your enemies and win the game!"
 run/main_scene="res://src/Screens/MainScreen.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://images/logo.png"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
+config/icon="res://images/icon.png"
 
 [autoload]
 
 PlayerData="*res://src/Autoload/PlayerData.tscn"
-
-[display]
-
-window/size/fullscreen=true
 
 [input]
 
