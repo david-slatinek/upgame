@@ -24,4 +24,4 @@ Quit:
 **Note:** for the best experience, play the game in fullscreen.
 
 # How to play
-Use the appropriate compiled file under the [install](/install) folder or compile it yourself with the Godot engine.
+Extract the appropriate compiled file under the [compiled](/compiled) folder or compile it yourself with the Godot engine.
