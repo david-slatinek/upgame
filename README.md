@@ -21,5 +21,7 @@ Pause:
 Quit:
 - Q or Escape
 
+**Note:** for the best experience, play the game in fullscreen.
+
 # How to play
 Use the appropriate compiled file under the [install](/install) folder or compile it yourself with the Godot engine.
